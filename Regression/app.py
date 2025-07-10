@@ -1,6 +1,6 @@
 import streamlit as st
 import joblib 
-import numpy 
+import numpy as np
 
 #load the model
 with open('models\simple_linear_regression.pkl', 'rb') as file:
@@ -19,14 +19,15 @@ experience = st.sidebar.slider("Years of Experience",
 
 #Buttons to predict
 if st.sidebar.button("Predict Salary"):
-    #predict salary
-#salary = model.predict(np.array([[experience]]))[0]
+    
+  #predict salary
+  salary = model.predict(np.array([[experience]]))[0]
 
-#Display result
-#st.success(f"Predicted Salary: Rs.{salary:,.2f}")
+  #Display result
+  st.success(f"Predicted Salary: Rs.{salary:,.2f}")
 
  #Additional Info
- st.info("This prediction is based on a simpple Linear Regression")  
+  st.info("This prediction is based on a simple Linear Regression")
 
 #footer 
 st.markdown("-------")
