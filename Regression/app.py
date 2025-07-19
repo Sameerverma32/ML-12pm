@@ -119,3 +119,4 @@ with col2:
     except:
         st.warning("Feature importance not available for this model.")
     st.markdown('</div>', unsafe_allow_html=True)
+    
